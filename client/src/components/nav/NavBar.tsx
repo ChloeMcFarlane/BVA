@@ -23,12 +23,13 @@ const slideIn = keyframes`
   }
 `;
 
-const pages = ['Upcoming Elections', 'Your Voter Info', 'Voting Options', 'Ballot Info', 'Drop Box Locations'];
+const pages = ['Upcoming Elections', 'Your Voter Info', 'Voting Options', 'Candidate Info', /*'Ballot Info',*/ 'Drop Box Locations'];
 const links: Record<string, string> = {
   'Upcoming Elections': '/upcomingElections',
   'Your Voter Info': '/voterInfo',
   'Voting Options': '/votingOptions',
-  'Ballot Info': '/ballotInfo',
+  'Candidate Info': '/candidateInfo',
+  // 'Ballot Info': '/ballotInfo',
   'Drop Box Locations': '/dropBoxLocations'
 };
 
@@ -57,12 +58,12 @@ function NavBar() {
     return currentPath === path;
   };
 
-  const handleClearData = () => {
-    Cookies.remove('address');
-    Cookies.remove('pollingInfo');
-    Cookies.remove('cookieConsent');
-    alert('All user data has been cleared.');
-  };
+  // const handleClearData = () => {
+  //   Cookies.remove('address');
+  //   Cookies.remove('pollingInfo');
+  //   Cookies.remove('cookieConsent');
+  //   alert('All user data has been cleared.');
+  // };
 
   return (
     <AppBar position="fixed" className="bg-gradient-custom shadow-none text-gray-800 my-0" style={{ zIndex: 1000, top: 0, width: '100%' }}>
@@ -186,7 +187,7 @@ function NavBar() {
           </Box>
 
           {/* Clear Data Button */}
-          <Box sx={{ flexGrow: 0, ml: 2 }}>
+          {/* <Box sx={{ flexGrow: 0, ml: 2 }}>
             <Button
               variant="outlined"
               color="error"
@@ -195,7 +196,7 @@ function NavBar() {
             >
               Clear User Data
             </Button>
-          </Box>
+          </Box> */}
         </Toolbar>
       </Container>
     </AppBar>
